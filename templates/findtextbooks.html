@@ -4,11 +4,13 @@
 <head>
   <link rel='stylesheet' href="{{ url_for('static', filename='index.css') }}" />
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/start/jquery-ui.css" />
-  <link rel="stylesheet" type="text/css"
-    href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css" />
+  
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
-  <script src="http://datatables.net/download/build/jquery.dataTables.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+  
   <script>
     $(document).ready(function () {
       $('#table_id').DataTable();

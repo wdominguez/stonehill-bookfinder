@@ -1,0 +1,213 @@
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+body
+{
+    background: url(donohue.jpg) no-repeat center center fixed;
+    height: 500px;
+    font-family: Helvetica, Arial, Sans-Serif;
+
+}
+
+img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+#siteName
+{
+    color: #55198B;
+    position: relative;
+    float: left;
+}
+
+h1
+{
+    color: #55198B;
+    margin-bottom: 0;
+}
+
+form
+{
+    color: black;
+}
+
+header *
+{
+    display: inline;
+    border-radius: 8px;
+}
+
+header
+{
+    padding: 20px;
+    background-color: LightSlateGray;
+    border-style: groove;
+    border-color: #55198B;
+    text-align: center;
+    padding-right:10px;
+}
+
+header input
+{
+    color: white;
+    font-weight: bold;
+    background-color: #55198B;
+    padding: 10px;
+    border-color: whitesmoke;
+    border-width: thin;
+}
+
+header input:hover
+{
+    color: #55198B;
+    background-color: #E8E8E8;
+    padding: 10px;
+}
+
+header h1
+{
+    position: absolute;
+    left:20px;
+    color:#55198B;
+    text-decoration:none;
+    font-family: courier;
+}
+
+.centerDiv
+{
+    margin: auto;
+    width: 20%;
+    padding: 30px;
+    padding-right: 35px;
+    padding-top: 0px;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    border-color: #55198B;
+}
+
+.homepageCenterDiv
+{
+    margin: auto;
+    width: 50%;
+    padding: 30px;
+    padding-right: 35px;
+    padding-top: 0px;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    border-color: #55198B;
+}
+
+.findTextBooksCenterDiv
+{
+    margin: auto;
+    width: 90%;
+    padding: 30px;
+    padding-right: 35px;
+    padding-top: 0px;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    border-color: #55198B;
+}
+
+.sellTextBooksCenterDiv
+{
+    margin: auto;
+    margin-top: 2%;
+    width: 15%;
+    padding: 30px;
+    padding-right: 35px;
+    padding-top: 0px;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    border-color: #55198B;
+}
+
+.uploadTextBookForm{
+    padding-top: 10%; 
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.labelledInput{
+   padding: 2%;;
+}
+
+.homepageCenterDiv h2
+{
+    text-align: center; 
+}
+
+.maxWidth
+{
+    width: 100%;
+}
+
+.textForm 
+{
+    clear: both;
+    text-align: left;
+}
+  
+.textForm input 
+{
+    
+    clear: both;
+}
+
+.centerHeader
+{
+    color: #55198B;
+    margin: auto;
+    width: 90%;
+}
+
+form input[type=text], input[type=password]
+{
+    border-radius: 12px;
+    border: 2px solid #55198B;
+    padding: 5px; 
+}
+
+label
+{
+    font-weight: 600;
+}
+
+.submit
+{
+    font-weight: 600;
+    border-radius: 5px;
+    background-color: lightgray;
+    border-color: black;
+    border-width: medium;
+}
+
+.submit:hover
+{
+    background-color: white;
+    color: #55198B;
+}
+
+.description
+{
+    font-size: 18px;
+}
+
+.description span
+{
+    font-weight: bold;
+}
+
+#loginLabel
+{
+    float: right;
+}

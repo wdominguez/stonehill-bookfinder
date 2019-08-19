@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel='stylesheet' href="{{ url_for('static', filename='index.css') }}"/>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/start/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css"/>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <script src="http://datatables.net/download/build/jquery.dataTables.js"></script>
+    <script>
+    $(document).ready(function () {
+      $('#table_id').DataTable();
+    });
+    </script>
+    <title>BookFinder</title>
+</head>
+
+<body>
+
+<header>
+    <h1 id="siteName">BookFinder</h1>
+
+    <form id="form" class="testing" method="GET" action="/homepage">
+        <input type="submit" name="submit" value="About"/></p>
+    </form>
+    <form id="form" method="GET" action="/findtextbooks">
+        <input type="submit" name="submit" value="Find Textbooks"/></p>
+    </form>
+    <form id="form" method="GET" action="/uploadtextbook">
+        <input type="submit" name="submit" value="Sell Your Textbook"/></p>
+    </form>
+    <form id="form" method="GET" action="/yourtextbooks">
+        <input type="submit" name="submit" value="Your Textbooks"/></p>
+    </form>
+    <form id="form" method="GET" action="/logout">
+        <input type="submit" name="submit" value="Login/Logout"/></p>
+    </form>
+
+    {% if username %}
+    <label id="loginLabel">Logged in as: {{ username }}</label>
+    {% else %}
+    <label id="loginLabel">Not Logged in</label>
+    {% endif %}
+</header>
+
+<div class="findTextBooksCenterDiv">
+
+    <h2>Find Textbooks</h2>
+
+    <table id="table_id">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Subject</th>
+            <th>Course</th>
+            <th>Condition</th>
+            <th>Price</th>
+            <th>Seller</th>
+            <th>Seller Email Address</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.subject}}</td>
+            <td>{{book.courseId}}</td>
+            <td>{{book.condition}}</td>
+            <td>${{book.price}}</td>
+            <td>{{book.seller}}</td>
+            <td><a href="mailto:" + {{book.email}}>{{book.email}}</a></td>
+            <td>
+                <form id="form" method="POST" action="/deletetextbook">
+                    <input type="hidden" name="deletedValue" value="{{loop.index0}}">
+                    <input type="submit" name="delete" value="Delete Book"/></p>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+
+</body>
+
+</html>

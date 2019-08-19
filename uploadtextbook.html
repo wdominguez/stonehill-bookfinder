@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+  <link rel='stylesheet' href="{{ url_for('static', filename='index.css') }}" />
+  <title>BookFinder</title>
+</head>
+
+<body>
+
+  <header>
+    <h1 id="siteName">BookFinder</h1>
+    
+    <form id="form" class="testing" method="GET" action="/homepage">
+    <input type="submit" name="submit" value="About"/></p>
+    </form>
+    <form id="form" method="GET" action="/findtextbooks">
+    <input type="submit" name="submit" value="Find Textbooks"/></p>
+    </form>        
+    <form id="form" method="GET" action="/uploadtextbook">
+    <input type="submit" name="submit" value="Sell Your Textbook"/></p>
+    </form>
+    <form id="form" method="GET" action="/yourtextbooks">
+    <input type="submit" name="submit" value="Your Textbooks"/></p>
+    </form>
+    <form id="form" method="GET" action="/logout">
+    <input type="submit" name="submit" value="Login/Logout"/></p>
+    </form>
+
+    {% if username %}
+    <label id="loginLabel">Logged in as: {{ username }}</label>
+    {% else %}
+    <label id="loginLabel">Not Logged in</label>
+    {% endif %}
+</header>
+
+<div class="sellTextBooksCenterDiv">
+<form class="uploadTextBookForm" method="POST" name="fileName" action="/uploadtextbook">
+  <div class="labelledInput">Book Title: <input type="text" name="title" placeholder="Physics for Scientists"></input></div>
+  <div class="labelledInput">Author: <input type="text" name="author" placeholder="Giancoli"></input></div>
+  <div class="labelledInput">Subject:  <input type="text" name="subject" placeholder="Physics"></input></div>
+  <div class="labelledInput">Course: <input type="text" name="course" placeholder="PHY 121"></input></div>
+  <div class="labelledInput">Condition: <input type="text" name="condition" placeholder="Fair"></input></div>
+  <div class="labelledInput">$Price: <input type="text" name="price" placeholder="100 | Negotiable"></input></div>
+  <br>
+  <input class="labelledInput" type="submit" value="Submit"></input>
+</form>
+  {% if error %}
+  <br>
+  <label>Error: {{ error }}</label>
+  {% endif %}
+</div>
+
+</body>
+</html>

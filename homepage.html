@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel = 'stylesheet'  href = "{{ url_for('static', filename='index.css') }}" />
+    <title>BookFinder</title>
+    </head>
+<body>
+
+  <header>
+        <h1 id="siteName">BookFinder</h1>
+        
+        <form id="form" class="testing" method="GET" action="/homepage">
+        <input type="submit" name="submit" value="About"/></p>
+        </form>
+        <form id="form" method="GET" action="/findtextbooks">
+        <input type="submit" name="submit" value="Find Textbooks"/></p>
+        </form>        
+        <form id="form" method="GET" action="/uploadtextbook">
+        <input type="submit" name="submit" value="Sell Your Textbook"/></p>
+        </form>
+        <form id="form" method="GET" action="/yourtextbooks">
+        <input type="submit" name="submit" value="Your Textbooks"/></p>
+        </form>
+        <form id="form" method="GET" action="/logout">
+        <input type="submit" name="submit" value="Login/Logout"/></p>
+        </form>
+
+        {% if username %}
+        <label id="loginLabel">Logged in as: {{ username }}</label>
+        {% else %}
+        <label id="loginLabel">Not Logged in</label>
+        {% endif %}
+</header>
+  
+<div class="homepageCenterDiv">
+  <h2>What is BookFinder?</h2>
+  <p class="description"> Searching through your class Facebook page to search for a book that isn't there is a huge waste of time.</p> 
+  <p class="description"> How much easier would it be to just <span>search for a book</span> or course and find it instantly?</p>
+  <p class="description"> With BookFinder, <span>list your unused books</span> from previous semesters, find your books for next
+      semester, and easily <span>get in contact</span> with a buyer/seller. </p>
+</div>
+  
+</body>
+</html>

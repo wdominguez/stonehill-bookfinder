@@ -1,1 +1,1 @@
-web: gunicorn textbookWebsite:app
+web: gunicorn textbookWebsite:app --log-file -

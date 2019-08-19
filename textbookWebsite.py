@@ -212,14 +212,12 @@ def isValidNewUser(userid, password, confirmPass, email):
 
 app.config['SECRET_KEY'] = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 app.config['SESSION_TYPE'] = 'filesystem'  
-sess.init_app(app)
 app.run(debug=False, threaded=True)
 
 #LINK TO LOCALHOST
 if __name__ == "__main__":
     app.config['SECRET_KEY'] = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
     app.config['SESSION_TYPE'] = 'filesystem'  
-    sess.init_app(app)
     app.run(debug=False, threaded=True)
     # app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
     # streamhandler = logging.StreamHandler(sys.stderr)

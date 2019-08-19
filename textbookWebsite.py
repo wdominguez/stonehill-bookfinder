@@ -210,7 +210,7 @@ def isValidNewUser(userid, password, confirmPass, email):
     error = None
     return [True, error]
 
-app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
+app.config['SECRET_KEY'] = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 #LINK TO LOCALHOST
 if __name__ == "__main__":

@@ -13,6 +13,10 @@ body
 
 }
 
+#table_id {
+    border: 5px solid #55198B;
+}
+
 img
 {
     display: block;

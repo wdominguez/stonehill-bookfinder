@@ -1,0 +1,3 @@
+ fix error message for create account page
+make error message for create account page more specific to error
+encrypt passwords using bookmarked tab info

@@ -212,7 +212,7 @@ def isValidNewUser(userid, password, confirmPass, email):
 
 #LINK TO LOCALHOST
 if __name__ == "__main__":
-    # app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
+    app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
     # streamhandler = logging.StreamHandler(sys.stderr)
     # streamhandler.setLevel(logging.DEBUG)
     # streamhandler.setFormatter(Formatter("[%(filename)s:%(lineno)s - %(funcName)10s() ] %(message)s"))

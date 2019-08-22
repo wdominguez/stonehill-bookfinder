@@ -60,5 +60,4 @@ class BookDao:
         self.db.commit()
 
     def populate(self):
-        self.table.insert(self.bookToRow(Book('Physics for Scientists and Engineers', 'Giancoli', 'Physics', 'PHY 121', 'Fair', '100', 'AceTheSkyhawk', 'askyhawk@stonehill.edu')))
         self.db.commit()

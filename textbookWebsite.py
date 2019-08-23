@@ -71,7 +71,7 @@ def deletetextbook():
     books = dao.selectByUserid(decode(session['user']).userid)
     toDelete = books[int(deleteSelected)]
     dao.delete(toDelete)
-    return yourtextbooks()
+    return redirect(url_for('yourtextbooks'))
 
 
 #UPLOAD
@@ -100,7 +100,7 @@ def uploadtextbook():
             book = Book(title, author, subject, course, condition, price, username, email)
             dao = BookDao()
             dao.insert(book)
-            return findtextbooks()
+            return redirect(url_for('findtextbooks'))
         else:
             error = boolError[1]
 
@@ -130,7 +130,7 @@ def login():
     if request.method == 'POST':
         if 'userid' in request.form and isValidLogin(request.form['userid'],request.form['password']):
             app.logger.debug('login successful')
-            return homepage()
+            return redirect(url_for('homepage'))
         else:
             app.logger.debug('invalid userid/pass')
             error = 'Invalid username or password'
@@ -153,7 +153,7 @@ def isValidLogin(userid, password):
 @app.route('/logout', methods=['POST', 'GET'])
 def logout():
     session.pop('user', None)
-    return login()
+    return redirect(url_for('login'))
 
 #NEW USER
 @app.route('/newuser', methods=['POST', 'GET'])
@@ -175,7 +175,7 @@ def newuser():
             user = User(request.form['userid'], request.form['password'], request.form['email'])
             dao = UserDao()
             dao.insert(user)
-            return login()
+            return redirect(url_for('findtextbooks'))
         else:
             error = boolError[1]
 
@@ -214,7 +214,7 @@ app.config['SECRET_KEY'] = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 #LINK TO LOCALHOST
 if __name__ == "__main__":
-    app.run(debug=False, threaded=True)
+    app.run(debug=True, threaded=True)
     # app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
     # streamhandler = logging.StreamHandler(sys.stderr)
     # streamhandler.setLevel(logging.DEBUG)

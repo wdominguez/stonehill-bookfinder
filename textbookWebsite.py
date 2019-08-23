@@ -12,14 +12,21 @@ import os
 from logging.handlers import RotatingFileHandler
 from logging import Formatter
 from userdao import UserDao
-from user import User
+#from user import User
+from User2 import User2
 from bookdao import BookDao
 from book import Book
 from werkzeug.utils import secure_filename
 from passlib.hash import sha256_crypt
 from flask import current_app as app
+from flask_sqlalchemy import SQLAlchemy
 
+from flask_heroku import Heroku
 app = Flask(__name__)
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+heroku = Heroku(app)
+db = SQLAlchemy(app)
+
 error = None
 
 #DEFAULT
@@ -109,9 +116,6 @@ def uploadtextbook():
     return render_template('uploadtextbook.html', **locals())
 
 def isValidUpload(title, author, subject, course, condition, price):
-    dao = UserDao()
-    users = dao.selectAll()
-
     if title is None or title == '' or author is None or author == '' or subject is None or subject == '' or condition is None or condition == ''  or price is None or price == '':
         error = 'Field left empty'
         return [False, error]
